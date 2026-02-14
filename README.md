@@ -1,6 +1,6 @@
 # Pixiv Follower Downloader (Go)
 
-[中文](README_zh-CN.md)
+[中文](README.zh-CN.md)
 
 A command-line Pixiv image downloader that:
 

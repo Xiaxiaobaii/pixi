@@ -24,7 +24,6 @@ var Wg = sync.WaitGroup{}
 var Wgd int
 var Debug bool
 var SQL *sqlite.Sql
-var Blacklist *sqlite.Sql
 var Root = tool.Findfile()
 
 type User struct {
@@ -96,13 +95,12 @@ type ImgUrls struct {
 
 func init() {
 	SQL = sqlite.New("pixiv.db")
-	SQL.CreateTables(map[string]map[string]sqlite.DataType{
+	SQL.ForceCreateTableData(map[string]map[string]sqlite.DataType{
 		"imgs": PixivType,
 		"star": PixivType,
-	})
-	Blacklist = sqlite.New("Blacklist.db")
-	Blacklist.CreateTable("bad", map[string]sqlite.DataType{
-		"id": sqlite.TEXT,
+		"bad": {
+			"id": sqlite.TEXT,
+		},
 	})
 
 	if !ExistFile("img") {
@@ -319,7 +317,7 @@ func GetWidthHeightForJpg(pattern string) (int, int) {
 
 // 检查id是否在黑名单中
 func ExistBad(pid string) bool {
-	return Blacklist.CheckData("bad", "id = '"+pid+"'")
+	return SQL.CheckData("bad", "id = '"+pid+"'")
 }
 
 func ExistSQL(pid string) bool {

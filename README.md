@@ -32,15 +32,6 @@ Current flow in code:
    - Download original image.
    - Save metadata into `pixiv.db` table `imgs`.
 
-## Requirements
-
-- Go `1.26rc1` (as declared in `go.mod`)
-- Local sibling modules required by `replace` directives:
-  - `../autotool`
-  - `../sqlite`
-  - `../lrys`
-- Valid Pixiv cookie
-
 ## Build
 
 ```bash

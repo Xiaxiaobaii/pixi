@@ -30,15 +30,6 @@
    - 下载原图；
    - 写入 `pixiv.db` 的 `imgs` 表。
 
-## 运行要求
-
-- Go `1.26rc1`（以 `go.mod` 为准）
-- `go.mod` 中使用了本地 `replace`，需要同级目录存在：
-  - `../autotool`
-  - `../sqlite`
-  - `../lrys`
-- 有效 Pixiv 登录 Cookie
-
 ## 构建
 
 ```bash

@@ -57,8 +57,6 @@ go build -ldflags "-s -w"
 - `-proxy`（string）：代理地址
 - `-thread`（int）：并发线程数（默认 `10`）
 
-注意：当前代码没有调用 `flag.Parse()`，因此这些参数默认不会生效（会保持默认值）。
-
 ## 输出与数据
 
 - 图片目录：`img/<author_uid>/<illust_id>.jpg`

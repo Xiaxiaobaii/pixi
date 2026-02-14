@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
-	"pixi/lib"
+	pixi "pixi/lib"
 	"syscall"
 	"time"
 )
@@ -30,6 +30,7 @@ func main() {
 
 	Thread := flag.Int("thread", 10, "设置并行线程数")
 
+	flag.Parse()
 	homeid := ""
 	cookie := ""
 	fmt.Printf("请输入主页id: ")

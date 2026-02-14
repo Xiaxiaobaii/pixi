@@ -59,8 +59,6 @@ Then input:
 - `-proxy` (string): proxy address
 - `-thread` (int): max parallel workers (default `10`)
 
-Important: `flag.Parse()` is not called in current source, so these flags currently stay at defaults unless code is updated.
-
 ## Output and Data
 
 - Images: `img/<author_uid>/<illust_id>.jpg`
